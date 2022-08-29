@@ -41,6 +41,8 @@
 					{{ csrf_field() }}
 					{{ method_field('delete') }}
 				</form>
+
+				<!-- Alert to confirm that the user really wants to delete the data -->
 				<button onclick="if (confirm('Are you sure to delete this data?')) {
 					event.preventDefault();
 					document.getElementById('delete-form-{{ $student->id }}').submit();
@@ -61,6 +63,7 @@
 	</tbody>
 </table>
 
+{{ $students->links() }}
 
 </div>
 
